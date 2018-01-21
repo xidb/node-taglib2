@@ -1,8 +1,8 @@
 var spawn = require('cross-spawn')
 var npmRunPath = require('npm-run-path')
 
-var runtime = process.env.npm_config_runtime || 'node'
-var target = process.env.npm_config_target || process.versions.node
+var runtime = process.env.npm_config_runtime || 'electron'
+var target = process.env.npm_config_target || '1.8.2-beta.3'
 var abi = process.env.npm_config_abi || process.versions.modules
 
 console.log('BUILD for %s@%s (abi=%s)', runtime, target, abi)
