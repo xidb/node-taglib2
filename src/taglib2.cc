@@ -331,6 +331,13 @@ NAN_METHOD(readTagsSync) {
     );
   }
 
+  if (map.contains("LYRICS")) {
+    obj->Set(
+      Nan::New("lyrics").ToLocalChecked(),
+      TagLibStringToString(map["LYRICS"].toString(","))
+    );
+  }
+
   !tag->album().isEmpty() && obj->Set(
     Nan::New("album").ToLocalChecked(),
     TagLibStringToString(tag->album())
